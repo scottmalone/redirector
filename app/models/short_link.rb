@@ -1,6 +1,7 @@
 class ShortLink < ApplicationRecord
   belongs_to :user
   belongs_to :original_link, counter_cache: true
+  has_many :short_link_visits
 
   before_create :create_short_url_code
 
