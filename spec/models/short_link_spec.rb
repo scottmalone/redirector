@@ -17,13 +17,14 @@ RSpec.describe ShortLink, type: :model do
     it {
       should belong_to :user
       should belong_to :original_link
+      should have_many :short_link_visits
     }
   end
 
   describe "creation" do
     it "creates a new instance given valid attributes" do
       short_link
-      expect(OriginalLink.count).to eq(1)
+      expect(ShortLink.count).to eq(1)
     end
 
     it "sets the short_url_code" do
