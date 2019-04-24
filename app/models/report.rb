@@ -1,0 +1,3 @@
+class Report < ApplicationRecord
+  validates :name, presence: true, uniqueness: true
+end
