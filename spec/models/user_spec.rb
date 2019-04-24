@@ -11,6 +11,12 @@ RSpec.describe User, type: :model do
     }
   end
 
+  describe "associations" do
+    it {
+      should have_many :short_links
+    }
+  end
+
   describe "validations" do
     it {
       should validate_presence_of :email
