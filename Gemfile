@@ -36,10 +36,12 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'pg'
-gem 'sidekiq'
-gem 'redis'
+gem 'active_interaction'
+gem 'data_migrate'
 gem 'jsonapi-rails'
+gem 'pg'
+gem 'redis'
+gem 'sidekiq'
 
 
 group :development, :test do
@@ -52,6 +54,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -67,6 +70,7 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem "database_cleaner"
+  gem 'shoulda-matchers'
   gem 'timecop'
 end
 
