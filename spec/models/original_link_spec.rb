@@ -12,6 +12,12 @@ RSpec.describe OriginalLink, type: :model do
     }
   end
 
+  describe "associations" do
+    it {
+      should have_many :short_links
+    }
+  end
+
   describe "validations" do
     it {
       should validate_presence_of :original_url
@@ -19,7 +25,7 @@ RSpec.describe OriginalLink, type: :model do
   end
 
   it "creates a new instance given valid attributes" do
-    user = create(:original_link)
+    original_link
     expect(OriginalLink.count).to eq(1)
   end
 end
