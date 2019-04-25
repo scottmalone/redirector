@@ -51,6 +51,7 @@ group :development, :test do
   gem 'awesome_print'
   gem "factory_bot_rails"
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do
