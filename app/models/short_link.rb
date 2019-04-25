@@ -26,7 +26,11 @@ class ShortLink < ApplicationRecord
   delegate :email, to: :user
   delegate :original_url, to: :original_link
 
-  def short_url
+  def resource_url
+    "#{ENV['ROOT_URL']}/short-links/#{short_url_code}"
+  end
+
+  def redirect_url
     "#{ENV['ROOT_URL']}/r/#{short_url_code}"
   end
 
