@@ -23,6 +23,13 @@ class ShortLink < ApplicationRecord
 
   before_create :create_short_url_code
 
+  delegate :email, to: :user
+  delegate :original_url, to: :original_link
+
+  def short_url
+    "#{ENV['ROOT_URL']}/r/#{short_url_code}"
+  end
+
   private
 
     def create_short_url_code
@@ -31,7 +38,7 @@ class ShortLink < ApplicationRecord
 
     def unique_code
       loop do
-        code = SecureRandom.alphanumeric(50).downcase
+        code = SecureRandom.alphanumeric(30).downcase
         break code unless ShortLink.where(short_url_code: code).exists?
       end
     end
