@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   root to: 'short_links#new'
 
@@ -8,4 +10,6 @@ Rails.application.routes.draw do
   resources :short_links, only: :new, path: '/short-links'
 
   get '/r/:short_url_code', to: 'redirect#show', as: :redirects
+
+  mount Sidekiq::Web => '/sidekiq'
 end

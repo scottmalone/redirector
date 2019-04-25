@@ -6,7 +6,7 @@ module ShortLinks
 
     def execute
       short_link = ShortLink.find_by(short_url_code: short_url_code)
-      # VisitShortLinkWorker
+      VisitShortLinkWorker.perform_async(short_link.id)
       short_link.original_link.original_url
     end
   end
