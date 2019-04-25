@@ -1,0 +1,22 @@
+<% content_for :javascript do %>
+  <script type='text/javascript'>
+    jQuery(document).ready(function() {
+      redirector.setup();
+    });
+  </script>
+<% end %>
+
+<%= form_tag('/api/short-links', { id: 'new-short-link-form' }) do %>
+  <p>
+    <%= label_tag(:email, 'Email:') %>
+    <%= text_field_tag(:email, '', size: 49) %>
+  </p>
+  <p>
+    <%= label_tag(:original_url, 'URL:') %>
+    <%= text_field_tag(:original_url, '', size: 50) %>
+  </p>
+  <%= submit_tag('Create Link') %>
+<% end %>
+
+<div id='result-container'>
+</div>
