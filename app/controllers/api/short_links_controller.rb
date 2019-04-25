@@ -9,7 +9,7 @@ module Api
       if outcome.valid?
         render jsonapi: outcome.result, status: 201
       else
-        render jsonapi_errors: outcome.errors.full_messages
+        render_create_error(message: outcome.errors.full_messages[0], status: 420)
       end
     end
 
@@ -19,14 +19,14 @@ module Api
       if short_link
         render jsonapi: short_link
       else
-        render jsonapi_errors: "Not Found", status: 404
+        render_create_error(message: "Not Found", status: 404)
       end
     end
 
     private
 
       def short_link_params
-        params.require(:short_link).permit(:email, :original_url)
+        params.permit(:email, :original_url)
       end
   end
 end

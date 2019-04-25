@@ -6,10 +6,8 @@ RSpec.describe "Short Links API", type: :request do
     let(:original_url) { Faker::Internet.url }
     let(:post_params) do
       {
-        short_link: {
-          email: email,
-          original_url: original_url
-        }
+        email: email,
+        original_url: original_url
       }
     end
 
@@ -31,10 +29,10 @@ RSpec.describe "Short Links API", type: :request do
     it "has the required attributes in the response body" do
       post "/api/short-links", params: post_params
       resp_attrs = json["data"]["attributes"]
-      expect(resp_attrs["email"]).to eq post_params[:short_link][:email]
+      expect(resp_attrs["email"]).to eq post_params[:email]
       expect(resp_attrs["resource_url"]).to_not be_nil
       expect(resp_attrs["redirect_url"]).to_not be_nil
-      expect(resp_attrs["original_url"]).to eq post_params[:short_link][:original_url]
+      expect(resp_attrs["original_url"]).to eq post_params[:original_url]
     end
   end
 
