@@ -1,5 +1,15 @@
-Task List
+Redirector
 =================
+
+### Summary
+  * A RESTful API with Ruby on Rails that:
+  * Accepts an email address and full link and returns a short link code
+  * Accepts a short link code and returns email address and original link
+  * A form that allows users to manually submit to the above API and see the results
+  * An endpoint that will redirect to the original URL.
+    * (Submission of http://app/r/ will redirect to http://original_link/)
+  * An asyncronous job that will trigger multiple webhooks whenever someone clicks
+  * A report that shows the most popular URLs based on a given timespan.
 
 ### System dependencies
 
