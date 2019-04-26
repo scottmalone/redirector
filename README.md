@@ -110,3 +110,5 @@ Redirector
   ```bash
     sidekiq
   ```
+
+3. Navigate to localhost:3000
