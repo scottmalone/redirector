@@ -16,7 +16,7 @@ Task List
     brew tap homebrew/versions
   ```
 
-1. Install Redis (cache):
+2. Install Redis (cache):
 
   ```bash
     brew install redis
@@ -24,13 +24,13 @@ Task List
     brew services start redis
   ```
 
-1. Install Postgres (db):
+3. Install Postgres (db):
 
   ```bash
     brew install postgres
   ```
 
-1. Install RVM (Ruby Version Manager):
+4. Install RVM (Ruby Version Manager):
 
   * https://rvm.io/rvm/install
 
@@ -42,7 +42,7 @@ Task List
 
   * Close terminal and open new one
 
-1. Install Git (version control):
+5. Install Git (version control):
 
   * Modify name/email below
 
@@ -53,21 +53,21 @@ Task List
     echo $'rvm_install_on_use_flag=1\nrvm_gemset_create_on_use_flag=1' > ~/.rvmrc
   ```
 
-1. Install project:
+6. Install project:
 
   ```bash
     git clone git@github.com:scottmalone/redirector.git
     cd redirector
   ```
 
-1. Install gems (Ruby libraries):
+7. Install gems (Ruby libraries):
 
   ```bash
     gem install bundler
     bundle install
   ```
 
-1. Bootstrap the databases
+8. Bootstrap the databases
 
   ```bash
     rails db:create db:migrate
@@ -81,7 +81,7 @@ Task List
     RAILS_ENV=test rake db:migrate
   ```
 
-1. Run specs:
+2. Run specs:
 
   ```bash
     rspec
@@ -95,7 +95,7 @@ Task List
     rails s
   ```
 
-1. Turn on background job processor (in another terminal):
+2. Turn on background job processor (in another terminal):
 
   ```bash
     sidekiq
