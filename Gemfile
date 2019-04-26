@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'active_interaction'
 gem 'data_migrate'
 gem 'ejs'
+gem 'friendly_id'
 gem 'jsonapi-rails'
 gem 'jquery-rails'
 gem 'pg'
