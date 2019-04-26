@@ -14,6 +14,7 @@
 
 FactoryBot.define do
   factory :report do
-    name { "Popular URLs" }
+    name { Faker::Name.unique.name }
+    url { Faker::Name.unique.name.parameterize }
   end
 end

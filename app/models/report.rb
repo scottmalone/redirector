@@ -13,5 +13,9 @@
 #
 
 class Report < ApplicationRecord
+  extend FriendlyId
+
   validates :name, presence: true, uniqueness: true
+
+  friendly_id :url
 end

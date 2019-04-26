@@ -6,6 +6,9 @@
   </script>
 <% end %>
 
+<%= link_to('Create Short Link', '/short-links/new') %>
+<%= link_to('Reports', '/reports', style: 'margin-left: 30px;') %>
+
 <%= form_tag('/api/short-links', { id: 'new-short-link-form' }) do %>
   <p>
     <%= label_tag(:email, 'Email:') %>

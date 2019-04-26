@@ -11,5 +11,7 @@ Rails.application.routes.draw do
 
   get '/r/:short_url_code', to: 'redirect#show', as: :redirects
 
+  resources :reports, only: [:index, :show]
+
   mount Sidekiq::Web => '/sidekiq'
 end

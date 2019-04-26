@@ -1,0 +1,7 @@
+<!-- Super pretty -->
+<% OriginalLink.popularity_rankings.each do |ranking| %>
+  <div>
+    <span class="ranking_count"><%= ranking[:count] %></span>
+    <span class="ranking_original_url"><%= ranking[:original_url] %></span>
+  </div>
+<% end %>
